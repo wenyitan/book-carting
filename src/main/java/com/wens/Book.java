@@ -3,7 +3,7 @@ package com.wens;
 public class Book {
     private String bookName;
     private int bookId;
-    private String bookAuthor = "Author not documented";
+    private BookAuthor bookAuthor = new BookAuthor("Author not documented");
 
     public String getBookName() {
         return bookName;
@@ -21,11 +21,11 @@ public class Book {
         this.bookId = bookId;
     }
 
-    public String getBookAuthor() {
+    public BookAuthor getBookAuthor() {
         return bookAuthor;
     }
 
-    public void setBookAuthor(String bookAuthor) {
+    public void setBookAuthor(BookAuthor bookAuthor) {
         this.bookAuthor = bookAuthor;
     }
 
@@ -38,9 +38,18 @@ public class Book {
         this.bookId = bookId;
     }
 
-    public Book(String bookName, int bookId, String bookAuthor) {
+    public Book(String bookName, int bookId, BookAuthor bookAuthor) {
         this.bookName = bookName;
         this.bookId = bookId;
         this.bookAuthor = bookAuthor;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", bookId=" + bookId +
+                ", bookAuthor=" + bookAuthor +
+                '}';
     }
 }

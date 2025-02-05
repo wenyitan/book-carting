@@ -24,17 +24,18 @@ public class BookTest {
     @Test
     public void testGetBookAuthorWhenSpecified() {
         String bookName = "Harry Potter and the Sorcerer's Stone";
-        String bookAuthor = "JK. Rowling";
-        Book book = new Book(bookName, 1, bookAuthor);
-        String actualBookAuthor = book.getBookAuthor();
-        assertEquals(bookAuthor, actualBookAuthor);
+        String bookAuthorName = "JK. Rowling";
+        BookAuthor author = new BookAuthor(bookAuthorName);
+        Book book = new Book(bookName, 1, author);
+        String actualBookAuthor = book.getBookAuthor().getAuthorName();
+        assertEquals(bookAuthorName, actualBookAuthor);
     }
 
     @Test
     public void testGetBookAuthorWhenNotSpecified() {
         String bookName = "Harry Potter and the Sorcerer's Stone";
         Book book = new Book(bookName, 1);
-        String actualBookAuthor = book.getBookAuthor();
+        String actualBookAuthor = book.getBookAuthor().getAuthorName();
         assertEquals("Author not documented", actualBookAuthor);
     }
 }
