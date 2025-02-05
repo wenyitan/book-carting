@@ -8,7 +8,7 @@ on:                   # specifies actions that trigger the workflow
 
 jobs:
   test:
-    runs-on: macos-latest             # specifies OS of virtual machine on github's server that workflow will run on
+    runs-on: ubuntu-latest             # specifies OS of virtual machine on github's server that workflow will run on
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3     # clones code onto vm - important else no access to code
