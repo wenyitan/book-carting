@@ -18,6 +18,6 @@ public class BookCartTest {
         Book book = new Book("Harry Potter and the Half Blood Prince", 1, "JK Rowling");
         bookCart.addBook(book);
         int actualBookCartSize = bookCart.getCartSize();
-        assertEquals(1, actualBookCartSize);
+        assertEquals(2, actualBookCartSize);
     }
 }
